@@ -1,25 +1,35 @@
-let btndelete=document.querySelectorAll(`.btn-delete`)
-for(let i=0;i<btndelete.length;i++){
-    btndelete[i].addEventListener(`click`,function(){
-   btndelete[i].parentElement.parentElement.remove()     
+let btndel = document.querySelectorAll('.btn-delete');
+for ( let i = 0 ; i<btndel.length ; i++ ){
+    btndel[i].addEventListener('click',function(){
+        btndel[i].parentElement.parentElement.remove()
     })
 }
-let boutonplus=document.getElementsByClassName(`btn-plus`);
-for(let i=0;i<boutonplus.length;i++){
-    boutonplus[i].addEventListener(`click`,function(){
-        boutonplus [i].previousElementSibling.innerText ++;
+
+let btnplus = document.getElementsByClassName('btn-plus');
+for (let i=0 ; i < btnplus.length ; i++){
+
+    btnplus[i].addEventListener('click',function(){
+        btnplus[i].previousElementSibling.innerText ++;
+    })
+}
+
+let btnminus = document.getElementsByClassName('btn-moins');
+for (let i=0 ; i < btnminus.length ; i++){
+
+    btnminus[i].addEventListener('click',function(){
+        if ( btnminus[i].nextElementSibling.innerText>0)
+        btnminus[i].nextElementSibling.innerText -- ;
+    })
+}
+
+let heart = document.getElementsByClassName('fas fa-heart');
+
+for ( let i=0 ; i<heart.length ; i++){
+    heart[i].addEventListener('click',function(){
+        if ( heart[i].style.color === 'grey'){
+        heart[i].style.color = 'red'}
+        else {
+            heart[i].style.color = 'grey'
     }
-    )
-}
-let btnmoins=document.getElementsByClassName(`btn-moins`);
-for (let i=0;i<btnmoins.length;i++){
-btnmoins[i].addEventListener(`click`,function(){
-    if(btnmoins[i].nextElementSibling.innerText>0)
-    btnmoins[i].nextElementSibling.innerText --;
-}
-)
-}
-let heart=document.getElementsByClassName(`fas fa-heart`);
-for(let i=0;i<heart.length;i++){
-    
+    })
 }
